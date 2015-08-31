@@ -1,0 +1,31 @@
+// Helpers
+@import 'nib'
+@import 'jeet'
+@import 'helpers/*'
+normalize-css()
+column(ratios = 1, offset = 0, cycle = 0, uncycle = 0, gutter = $gutter)
+rupture.scale = 0 400px 600px 800px 1050px 1800px
+rupture.scale-names = 'xs' 's' 'm' 'l' 'xl' 'hd'
+// Foundation
+@import 'foundation/*'
+// Elements
+@import 'elements/*'
+// Regions
+@import 'regions/*'
+
+
+
+
+.bg-overlay
+    fixed top right bottom left
+    size 100%
+    overflow hidden
+    background $foreground
+    &__inner
+        fixed top left
+        size 100%
+        filter blur(20px)
+        background transparent center center
+        background-size cover
+        transform scale(1.2)
+        opacity .8

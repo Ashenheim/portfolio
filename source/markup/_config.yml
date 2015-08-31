@@ -1,0 +1,15 @@
+title: Portfolio
+baseurl: /portfolio
+
+# Build
+exclude: [
+'.git',
+'node_modules',
+'source',
+'gulp',
+'bower.json',
+'gulpfile.js',
+'package.json',
+'README.md',
+'build'
+]
