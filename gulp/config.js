@@ -71,7 +71,6 @@ module.exports = {
     scripts: {
         src: [
             $p.bower + 'jquery/dist/jquery.js',
-            $p.bower + 'mustache.js/mustache.js',
             $p.source.js + 'vendors/*.js',
             $p.source.js + 'partials/*.js',
             $p.source.js + 'init.js'
@@ -89,7 +88,10 @@ module.exports = {
         Deploy
     ------------------------------ */
     deploy: {
-        src: $p.build.index + '**/*',
+        src: [
+            $p.build.index + '**/*',
+            $p.build.index + '*'
+        ],
         settings: {}
     },
     /* ------------------------------

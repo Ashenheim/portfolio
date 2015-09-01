@@ -15,7 +15,9 @@ layout: compress
     </main>
 
     <div class="bg-overlay">
-        <div class="bg-overlay__inner" style="background-image: url({{ site.posts[0].coverimage | prepend:site.baseurl }});"></div>
+        <canvas id="bgOverlay" class="bg-overlay__inner" data-image="{{ site.posts[0].coverimage | prepend:site.baseurl }}"></canvas>
     </div>
+
+    <script src="{{ '/assets/js/global.js' | prepend:site.baseurl }}" charset="utf-8"></script>
 </body>
 </html>

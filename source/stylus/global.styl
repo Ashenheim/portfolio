@@ -12,20 +12,3 @@ rupture.scale-names = 'xs' 's' 'm' 'l' 'xl' 'hd'
 @import 'elements/*'
 // Regions
 @import 'regions/*'
-
-
-
-
-.bg-overlay
-    fixed top right bottom left
-    size 100%
-    overflow hidden
-    background $foreground
-    &__inner
-        fixed top left
-        size 100%
-        filter blur(20px)
-        background transparent center center
-        background-size cover
-        transform scale(1.2)
-        opacity .8
