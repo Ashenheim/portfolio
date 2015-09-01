@@ -10,12 +10,12 @@ layout: compress
     <link rel="stylesheet" href="{{ '/assets/css/global.css' | prepend:site.baseurl }}">
 </head>
 <body>
-    <main id="main" class="main-content">
-        <div id="primary" class="site-content">{{content}}</div>
-    </main>
 
-    <div class="bg-overlay">
-        <canvas id="bgOverlay" class="bg-overlay__inner" data-image="{{ site.posts[0].coverimage | prepend:site.baseurl }}"></canvas>
+    <div class="site-wrap">
+        {% include header.html %}
+        <main id="main" class="main-content">
+            <div id="primary" class="site-content">{{content}}</div>
+        </main>
     </div>
 
     <script src="{{ '/assets/js/global.js' | prepend:site.baseurl }}" charset="utf-8"></script>

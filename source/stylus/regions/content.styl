@@ -4,11 +4,27 @@
 
 
 /* ------------------------------------
+    Hero Banner
+------------------------------------ */
+.hero-banner
+    text-align center
+    background $c-primary
+    color rgba(white, .8)
+    padding ($spacing-large * 4) $gutter
+    font-size 2em
+    line-height 2
+
+    p { margin: 0; }
+
+    .slogal
+        font-size 1.5em
+        font-weight bold
+
+
+/* ------------------------------------
     Main content
 ------------------------------------ */
-.site-content
-    center($site-width)
-    background white
+.site-wrap
     box-shadow 0 0 10px rgba(black, .1)
     min-height 100vh
     position relative
@@ -19,22 +35,46 @@
     Main content
 ------------------------------------ */
 .article
-    color $background
-    padding $gutter
+    background white
+    position relative
+    padding $spacing-large $gutter
     text-align center
-    background $foreground center center no-repeat
-    background-size cover
-    min-height 400px
-    box-shadow 0 1px 3px rgba(black, .2)
-    border-bottom 1px solid black
+    color $foreground--light
+    box-shadow 0 1px 8px rgba(black, .1)
+    margin-bottom $spacing-medium
+
+    h1,h2,h3,h4,h5,h6,p,ul,ol
+        max-width $text-width
+        margin-left auto
+        margin-right auto
+
+    &__content
+        center($site-width)
+
+    /* article--short
+    ------------------------------------ */
+
+    &--portfolio
+        color $background
+        background $foreground
+        min-height 400px
+        position relative
+        .cover-image
+            background center center no-repeat
+            background-size cover
+            absolute top left
+            size 100%
+
+        .overlay         { opacity: 0; }
+        &:hover .overlay { opacity: 1; }
 
 
-/* ------------------------------------
-    Background canvas
------------------------------------- */
+.overlay
+    absolute top left bottom right
+    background rgba($c-primary, .8)
+    transition all $easing
 
-.bg-overlay
-    fixed top left
-    size 100%
-    canvas
-        size 100%
+    &__container
+        absolute top 50% left 0
+        width 100%
+        transform translateY(-50%)

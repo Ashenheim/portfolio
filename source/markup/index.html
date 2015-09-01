@@ -3,5 +3,9 @@ layout: page
 ---
 
 {% for post in site.posts %}
-{% include article-short.html %}
+{% if post.layout == "portfolio" %}
+    {% include article-short--portfolio.html %}
+{% else %}
+    {% include article-short.html %}
+{% endif %}
 {% endfor %}

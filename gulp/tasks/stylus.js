@@ -38,5 +38,5 @@ gulp.task('stylus', function() {
         .pipe(sourcemaps.write( '../maps', config.settings.sourcemaps ))
         .pipe(gulp.dest( config.dest.one ))
         .pipe(gulp.dest( config.dest.two ))
-        .pipe( browserSync.reload({stream:true}) );
+        .pipe( browserSync.stream({match: "**/*.css"}));
 });

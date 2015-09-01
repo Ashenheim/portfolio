@@ -3,30 +3,24 @@
 ------------------------------------ */
 .main-header
     // edit()
-    border-bottom 1px solid $primary
-    padding $spacing-large $gutter
-    margin-bottom $spacing-large
+
+    .site-title
+        margin 0
 
     &__inner
         cf()
         center($site-width)
         padding $spacing-large $gutter
+        position relative
 
-.menu
-    cf()
-    vertical-align middle
-    &-item
-        display table
-    &-partial
-        display table-cell
-        vertical-align middle
 
-    &--left { float: left; }
-    &--right { float: right; }
-
-/* ------------------------------------
-    Site-title
------------------------------------- */
-.site-title
-    font-size 2em
-    font-weight bold
+.hamburger
+    width 30px
+    absolute top ($spacing-large + 12px) right $gutter
+    span
+        display block
+        size 100%     3px
+        margin-bottom 5px
+        background $foreground
+        border-radius 30px
+        &:last-child { margin-bottom: 0px; }

@@ -36,7 +36,7 @@ module.exports = {
     jekyll: {
         src: $p.source.index,
         dest: $p.build.index,
-        watch: $p.source.index + '**/*.{html,json,yml,csv,jpg,png,gif}',
+        watch: $p.source.index + '**/*.{html,json,yml,csv,jpg,png,gif,md,markdown}',
     },
     /* ------------------------------
         Style
