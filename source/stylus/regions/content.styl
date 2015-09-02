@@ -37,7 +37,7 @@
 .article
     background white
     position relative
-    padding $spacing-large $gutter
+    padding $spacing-large 0
     text-align center
     color $foreground--light
     box-shadow 0 1px 8px rgba(black, .1)
@@ -58,23 +58,61 @@
         color $background
         background $foreground
         min-height 400px
+        height 70vh
         position relative
+        overflow hidden
+
+        /*
+            cover image
+        ------------------------------------ */
         .cover-image
             background center center no-repeat
             background-size cover
             absolute top left
             size 100%
+            transition all 60s linear
 
-        .overlay         { opacity: 0; }
+        &:hover .cover-image
+            transform scale(1.6) rotate(-3deg)
+
+        /*
+            overlay
+        ------------------------------------ */
+        .overlay { opacity: 0; }
         &:hover .overlay { opacity: 1; }
 
 
 .overlay
     absolute top left bottom right
-    background rgba($c-primary, .8)
+    z-index 2
+    size 100%
     transition all $easing
+    background rgba(black, .2)
+    color white
+    text-shadow 0 1 3px rgba(black, .2)
 
     &__container
         absolute top 50% left 0
         width 100%
         transform translateY(-50%)
+
+
+.art-block
+    background: $foreground
+    position relative
+
+    &__background
+        absolute top right bottom left
+        size 100%
+
+    figure
+        max-width $site-width
+        display block
+        margin 0 auto
+        padding $spacing-large 0
+        position relative
+        z-index 2
+
+    img
+        display block
+        box-shadow 0 0 5px rgba(black, .2)

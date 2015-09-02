@@ -6,7 +6,8 @@ blurBackground = (function() {
         console.log('hello')
         var cxt    = canvas.getContext('2d');
         var image  = new Image();
-        image.src = '/images/narley/gifs/5NC3Gau.jpg';
+        var imageSrc = canvas.getAttribute("data-src")
+        image.src = imageSrc;
 
         $(canvas).css({
             width: 100 +'%',
