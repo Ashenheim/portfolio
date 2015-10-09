@@ -57,7 +57,7 @@ module.exports = {
             },
             postcss: [
                 csswring(),
-                autoprefixer()
+                autoprefixer("last 2 versions")
             ],
             sourcemaps: {
                 includeContent: false,

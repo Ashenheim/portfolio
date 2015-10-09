@@ -1,5 +1,6 @@
 title: Portfolio
 baseurl: /portfolio
+permalink: pretty
 
 # Build
 exclude: [
@@ -13,3 +14,10 @@ exclude: [
 'README.md',
 'build'
 ]
+
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      layout: ["index", "compress"]

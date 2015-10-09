@@ -3,20 +3,19 @@ layout: compress
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js support3D">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{site.title}}</title>
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ '/assets/css/global.css' | prepend:site.baseurl }}">
 </head>
 <body>
 
-    <div class="site-wrap">
+    <div class="site-wrap plax">
         {% include header.html %}
-        <main id="main" class="main-content">
-            <div id="primary" class="site-content">{{content}}</div>
-        </main>
+        {{content}}
     </div>
 
     <script src="{{ '/assets/js/global.js' | prepend:site.baseurl }}" charset="utf-8"></script>

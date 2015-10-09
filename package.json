@@ -12,6 +12,7 @@
     "autoprefixer": "^5.2.0",
     "browser-sync": "^2.8.2",
     "csswring": "^3.0.7",
+    "customizr": "^1.0.0-alpha",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-gh-pages": "^0.5.2",

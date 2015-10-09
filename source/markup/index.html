@@ -1,11 +1,10 @@
 ---
-layout: page
+layout: 'page'
+permalink: index.html
 ---
 
 {% for post in site.posts %}
-{% if post.layout == "portfolio" %}
-    {% include article-short--portfolio.html %}
-{% else %}
-    {% include article-short.html %}
-{% endif %}
+    <p>
+        <a href="{{post.url | prepend:site.baseurl}}">{{post.title}}</a>
+    </p>
 {% endfor %}
