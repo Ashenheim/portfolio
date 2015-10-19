@@ -4,7 +4,9 @@ permalink: index.html
 ---
 
 {% for post in site.posts %}
+{% if post.layout != "compress" %}
     <p>
         <a href="{{post.url | prepend:site.baseurl}}">{{post.title}}</a>
     </p>
+{%endif%}
 {% endfor %}

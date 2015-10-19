@@ -4,20 +4,20 @@ permalink: pretty
 
 # Build
 exclude: [
-'.git',
-'node_modules',
-'source',
-'gulp',
-'bower.json',
-'gulpfile.js',
-'package.json',
-'README.md',
-'build'
+    '.git',
+    'node_modules',
+    'source',
+    'gulp',
+    'bower.json',
+    'gulpfile.js',
+    'package.json',
+    'README.md',
+    'build'
 ]
 
 defaults:
-  -
-    scope:
-      path: "" # empty string for all files
+  - scope:
+      path: _posts
     values:
-      layout: ["index", "compress"]
+      layout: ["compress", "index"]
+      permalink: "/blog/:title.html"
