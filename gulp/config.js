@@ -1,83 +1,61 @@
 /* ====================================
     Configuration file
 ==================================== */
-
-var $p = {
+var paths = {
     bower: "./bower_components/",
-    build: {
-        index : "build/",
-        style : {
-            one: "build/assets/css/",
-            two: "source/markup/assets/css/"
-        },
-        js : {
-            one: "build/assets/js/",
-            two: "source/markup/assets/js/"
-        },
+    assets: {
+        css : 'assets/css/',
+        js  : 'assets/js/'
     },
-    source: {
-        index : "source/markup/",
-        jade  : "source/markup/",
-        style : "source/stylus/",
-        js    : "source/js/",
+    build: 'build/',
+    src: {
+        index : 'source/',
+        jekyll: 'source/markup/',
+        stylus: 'source/stylus/',
+        javascript: 'source/javascript/'
     }
-}
+};
 
 
 module.exports = {
 
-    source: $p.source.index,
-    build: $p.build.index,
+    build: paths.build,
 
     /* ------------------------------
         Jekyll
     ------------------------------ */
     jekyll: {
-        src: $p.source.index,
-        dest: $p.build.index,
-        watch: $p.source.index + '**/*.{html,json,yml,csv,jpg,png,gif,md,markdown}',
+        src:   paths.src.jekyll,
+        dest:  paths.build,
+        watch: [
+            paths.src.jekyll + '**/*.{html,md,yml}'
+        ]
     },
     /* ------------------------------
         Style
     ------------------------------ */
     stylus: {
-        src: [ $p.source.style + 'global.styl'],
-        dest: {
-            one: $p.build.style.one,
-            two: $p.build.style.two,
-        },
+        src:  paths.src.stylus + '*.styl',
+        dest: paths.assets.css,
         watch: [
-            $p.source.style + '*.styl',
-            $p.source.style + '**/*.styl'
+            paths.src.stylus + '*.styl',
+            paths.src.stylus + '**/*.styl'
         ]
     },
     /* ------------------------------
-        Scripts
+        Javascript
     ------------------------------ */
-    scripts: {
-        src: [
-            $p.bower + 'jquery/dist/jquery.js',
-            $p.source.js + 'vendors/*.js',
-            $p.source.js + 'partials/*.js',
-            $p.source.js + 'init.js'
+    javascript: {
+        src:  [
+            paths.bower + 'jquery/dist/jquery.js',
+            paths.src.javascript + 'vendor/**/*.js',
+            paths.src.javascript + 'partials/**/*.js',
+            paths.src.javascript + '*.js'
         ],
-        dest: {
-            one: $p.build.js.one,
-            two: $p.build.js.two,
-        },
+        dest: paths.assets.js,
         watch: [
-            $p.source.js + '*.js',
-            $p.source.js + '**/*.js'
+            paths.src.javascript + '*.js',
+            paths.src.javascript + '**/*.js'
         ]
-    },
-    /* ------------------------------
-        Deploy
-    ------------------------------ */
-    deploy: {
-        src: [
-            $p.build.index + '**/*',
-            $p.build.index + '*'
-        ],
-        settings: {}
     }
-}
+};

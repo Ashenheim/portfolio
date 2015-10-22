@@ -1,4 +1,10 @@
 .publish
 node_modules
 bower_components
+
+# Build Files
 build
+source/markup/assets/css
+source/markup/assets/maps
+source/markup/assets/js
+source/markup/.jekyll-metadata

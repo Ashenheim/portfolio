@@ -12,8 +12,7 @@ var gulp         = require('gulp'),
     browserSync  = require('browser-sync'),
     runSequence  = require('run-sequence'),
     plumber      = require('gulp-plumber'),
-    prettify     = require('gulp-prettify'),
-    config       = require('../config').jekyll;
+    config       = require('../config.js').jekyll;
 
 
 var jekyllPrompt = process.platform === "win32" ? "jekyll.bat" : "jekyll";
@@ -32,7 +31,7 @@ gulp.task('jekyll:dist', function (done) {
 
 
 gulp.task('jekyll:dev', function (gulpCallBack) {
-    browserSync.notify('<span style="color: grey">Running:</span> $ jekyll build');
+
     var jekyll = spawn( jekyllPrompt , [
         'build',
         '-d' + config.dest,
@@ -41,15 +40,9 @@ gulp.task('jekyll:dev', function (gulpCallBack) {
     ], {stdio: 'inherit'});
 
     jekyll.on('exit', function(code) {
-        gulp.start('prettify');
         gulpCallBack(code === 0 ? null : 'ERROR:' + code)
     });
-});
-
-gulp.task('prettify', function() {
-    gulp.src(config.dest + '**/*.html')
-        .pipe(prettify({indent_size: 2}))
-        .pipe(gulp.dest(config.dest))
+    
 });
 
 

@@ -10,8 +10,8 @@ var runSequence = require('run-sequence');
 
 gulp.task('build', function() {
     runSequence(
-        ['stylus', 'scripts'],
-        ['jekyll:dev']
+        ['jekyll:dev'],
+        ['stylus','javascript']
     )
 });
 
@@ -20,10 +20,7 @@ gulp.task('serve', [
     'browsersync'
 ]);
 
-gulp.task('default', function(cb) {
-    runSequence(
-        ['stylus', 'scripts'],
-        ['jekyll:dev'],
-        ['watch', 'browsersync']
-    )
-});
+gulp.task('default', [
+    'build',
+    'serve'
+]);

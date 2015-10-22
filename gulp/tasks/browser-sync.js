@@ -3,7 +3,7 @@
 ==================================== */
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
-var config      = require('../config.js');
+var config   = require('../config.js');
 
 var settings = {
     server: {
@@ -12,6 +12,7 @@ var settings = {
     host: "localhost",
     online: false,
     open: false,
+    port: 8080,
     notify: {
         styles: [
             'color: rgb(255, 255, 255)',
@@ -27,6 +28,7 @@ var settings = {
         ]
     }
 }
+
 
 /*
     Tasks & Functions
