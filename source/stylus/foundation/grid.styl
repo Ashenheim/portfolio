@@ -1,0 +1,35 @@
+container($w = $site-width) {
+    width: 100%;
+    padding-left: $gutter;
+    padding-right $gutter
+    max-width: $w;
+    margin: 0 auto;
+}
+
+row() {
+    margin-left:  minus($gutter);
+    margin-right: minus($gutter);
+    cf()
+}
+
+$column {
+    padding-left: $gutter;
+    padding-right: $gutter;
+    float: left;
+}
+
+column($i) {
+    @extend $column;
+    width: (100% / 12) * $i
+}
+
+
+.container
+    container()
+
+.row
+    row()
+
+for $i in (1..12)
+    .col-{$i}
+        column($i)

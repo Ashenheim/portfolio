@@ -3,6 +3,7 @@ layout: 'page'
 permalink: index.html
 ---
 
+<div class="container">
 {% for post in site.posts %}
 {% if post.layout != "compress" %}
     <p>
@@ -10,3 +11,4 @@ permalink: index.html
     </p>
 {%endif%}
 {% endfor %}
+</div>

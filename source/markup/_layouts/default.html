@@ -15,7 +15,11 @@ layout: compress
 
     <div class="site-wrap">
         {% include header.html %}
-        {{content}}
+        <div id="main" class="main-content">
+            <div class="site-content">
+                {{content}}
+            </div>
+        </div>
     </div>
 
     <script src="{{ '/assets/js/global.js' | prepend:site.baseurl }}" charset="utf-8"></script>
