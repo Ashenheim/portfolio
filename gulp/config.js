@@ -1,11 +1,6 @@
 /* ====================================
     Configuration file
 ==================================== */
-var nib = require('nib');
-var jeet = require('jeet');
-var rupture = require('rupture');
-var csswring = require('csswring');
-var autoprefixer = require('autoprefixer');
 
 var $p = {
     bower: "./bower_components/",
@@ -54,20 +49,7 @@ module.exports = {
         watch: [
             $p.source.style + '*.styl',
             $p.source.style + '**/*.styl'
-        ],
-        settings: {
-            stylus: {
-                use: [ nib(), jeet(), rupture() ]
-            },
-            postcss: [
-                csswring(),
-                autoprefixer("last 2 versions")
-            ],
-            sourcemaps: {
-                includeContent: false,
-                sourceRoot: '../../_source/sass'
-            },
-        }
+        ]
     },
     /* ------------------------------
         Scripts

@@ -1,14 +1,41 @@
 /* ====================================
     stylus
 ==================================== */
-var gulp        = require('gulp');
-var stylus      = require('gulp-stylus');
-var postcss     = require('gulp-postcss');
-var sourcemaps  = require('gulp-sourcemaps');
-var plumber     = require('gulp-plumber');
-var browserSync = require('browser-sync');
-var config      = require('../config.js').stylus;
+var gulp            = require('gulp');
+var stylus          = require('gulp-stylus');
+var postcss         = require('gulp-postcss');
+var sourcemaps      = require('gulp-sourcemaps');
+var plumber         = require('gulp-plumber');
+var browserSync     = require('browser-sync');
 
+// Library imports
+var nib             = require('nib');
+var jeet            = require('jeet');
+var rupture         = require('rupture');
+var csswring        = require('csswring');
+var autoprefixer    = require('autoprefixer');
+var assets          = require('postcss-assets');
+
+var config          = require('../config.js').stylus;
+
+var settings = {
+    stylus: {
+        use: [
+            nib(),
+            jeet(),
+            rupture()
+        ]
+    },
+    postcss: [
+        // csswring(),
+        assets(),
+        autoprefixer("last 2 versions")
+    ],
+    sourcemaps: {
+        includeContent: false,
+        sourceRoot: '../../_source/sass'
+    },
+};
 
 /*
     Tasks & Functions
@@ -33,9 +60,9 @@ gulp.task('stylus', function() {
     return gulp.src( config.src )
         .pipe(plumber({ errorHandler: onError }))
         .pipe(sourcemaps.init())
-            .pipe(stylus(config.settings.stylus))
-            .pipe(postcss(config.settings.postcss))
-        .pipe(sourcemaps.write( '../maps', config.settings.sourcemaps ))
+            .pipe(stylus(settings.stylus))
+            .pipe(postcss(settings.postcss))
+        .pipe(sourcemaps.write( '../maps', settings.sourcemaps ))
         .pipe(gulp.dest( config.dest.one ))
         .pipe(gulp.dest( config.dest.two ))
         .pipe( browserSync.stream({match: "**/*.css"}));
